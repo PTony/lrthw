@@ -1,0 +1,3 @@
+# Ignore Aptana Studio .project files
+.project
+/.settings/
