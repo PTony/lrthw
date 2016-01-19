@@ -1,19 +1,18 @@
-puts "text"  # Print "text" and finish with a newline
-print "text" # Print "text" and DONT finish with a newline
-# # pound character or octothorpe - used for comment
-#{ ... } # format string - string interpolation
-%{ ... } #
-formatter = "%{first} %{second}" # format string
+puts            puts "text"         # Print "text" and finish with a newline
+print           print "text"        # Print "text" and DONT finish with a newline
+#               # comment           # pound character or octothorpe - used for comment
+#{ ... }        #{}                 # format string - string interpolation
+%{ ... }        formatter = "%{first} %{second}"        # format string
 
-"""
-multiple
-lines
-text
-"""
+multiple lines comments """
+                        multiple
+                        lines
+                        comment
+                        """
 
-gets.chomp
-.to_i # convert to integer
-.to_f # convert to float
+gets.chomp      gets.chomp          # read the input
+.to_i           10/3.to_i           # convert to integer
+.to_f           10/3.to_f           # convert to float
 ARGV # Arguments
 ARGV.first
 $stdin.gets.chomp
