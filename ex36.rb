@@ -18,7 +18,7 @@ end
 def bear_room ()
   puts "Inside this room there is a honey pot a bear and 3 doors"
   puts "One on North side, one on the East, and the other South side."
-  puts ""
+  puts "There is also a honey pot and a bear"
 end
 
 def empty_room ()
@@ -42,6 +42,10 @@ def empty_room ()
 end
 
 def chthulhu_room ()
+  puts "You enter a room with a giant pool in it"
+  puts "Around this pool, 3 doors. One in North, one in South and one on West side"
+  puts "Something move in the poll... OMG this is Cthulhu coming from a tunnel inside the pool"
+  puts "What are you doing ?"
 end
 
 
