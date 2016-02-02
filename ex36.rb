@@ -48,11 +48,11 @@ def chthulhu_room ()
   puts "What are you doing ?"
 end
 
-
-def skeleton_room ()
+def infinite_hole ()
+  dead("Take care were you walk, there is an infinite hole here and you fall in it")
 end
 
-def infinite_hole ()
+def skeleton_room ()
 end
 
 def secret_room ()
