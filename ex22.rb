@@ -1,3 +1,6 @@
+\n              newline
+\t              tabulation
+
 puts            puts "text"         # Print "text" and finish with a newline
 print           print "text"        # Print "text" and DONT finish with a newline
 #               # comment           # pound character or octothorpe - used for comment
