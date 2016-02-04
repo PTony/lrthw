@@ -51,10 +51,13 @@ def chthulhu_room ()
   puts "> "
   choice = $stdin.gets.chomps
 
-  if choice.include? "door"
+  if (choice.include? "go" | choice include? "open") & choice.include? "door"
     if choice.include? "north"
+      treasure_room
     elsif choice.include? "south"
+      empty_room
     elsif choice.include? "west"
+      bear_room
   elsif
   else
 end
@@ -64,12 +67,16 @@ def infinite_hole ()
 end
 
 def skeleton_room ()
+  puts "You enter a room one living skeleton."
 end
 
 def secret_room ()
+  puts "You enter an apparently secret room"
+  puts "Look like there is no doors"
 end
 
 def treasure_room ()
+  puts "You enter the treasure room"
 end
 
 def dead (why)
