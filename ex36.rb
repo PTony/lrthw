@@ -42,24 +42,31 @@ def empty_room ()
 end
 
 def chthulhu_room ()
-  puts "You enter a room with a giant pool in it"
-  puts "Around this pool, 3 doors. One in North, one in South and one on West side"
+  puts "You enter a room with a giant hole full of water in it, there is a tubu"
+  puts "Around this hole, 3 doors. One in North, one in South and one on West side"
   puts "On the ground there is a tuba and palms kit and a harpon."
-  puts "Wait! Something move in the poll... OMG! This is Cthulhu coming from a tunnel inside the pool"
+  puts "Wait! There is bubbles in the water, there is a tunnel and wait! Something is coming from it... OMG! This is Cthulhu, he is now surfacing and staring at you and yelling like the demons of hell"
   puts "What are you doing ?"
+
+  cthulhu_dead = false
 
   puts "> "
   choice = $stdin.gets.chomps
 
   if (choice.include? "go" | choice include? "open") & choice.include? "door"
-    if choice.include? "north"
+    if choice.include? "north" && cthulhu_dead
       treasure_room
-    elsif choice.include? "south"
+    elsif choice.include? "south" && cthulhu_dead
       empty_room
-    elsif choice.include? "west"
+    elsif choice.include? "west" && cthulhu_dead
       bear_room
-  elsif
+    elsif !cthulhu_dead
+      dead("You go nowhere, Tchulhu make you a piece of shit and send you in hell")
+    end
+  elsif choice.include? "throw harpon at tchulhu"
+    puts "OMG, you hit him between his eyes. He go down, look like you killed him"
   else
+    "This is not possible, retry"
 end
 
 def infinite_hole ()
@@ -67,12 +74,12 @@ def infinite_hole ()
 end
 
 def skeleton_room ()
-  puts "You enter a room one living skeleton."
+  puts "You enter a room with one living skeleton in it."
 end
 
 def secret_room ()
-  puts "You enter an apparently secret room"
-  puts "Look like there is no doors"
+  puts "You enter a strange room"
+  puts "There is no doors"
 end
 
 def treasure_room ()
