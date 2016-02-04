@@ -44,8 +44,19 @@ end
 def chthulhu_room ()
   puts "You enter a room with a giant pool in it"
   puts "Around this pool, 3 doors. One in North, one in South and one on West side"
-  puts "Something move in the poll... OMG this is Cthulhu coming from a tunnel inside the pool"
+  puts "On the ground there is a tuba and palms kit and a harpon."
+  puts "Wait! Something move in the poll... OMG! This is Cthulhu coming from a tunnel inside the pool"
   puts "What are you doing ?"
+
+  puts "> "
+  choice = $stdin.gets.chomps
+
+  if choice.include? "door"
+    if choice.include? "north"
+    elsif choice.include? "south"
+    elsif choice.include? "west"
+  elsif
+  else
 end
 
 def infinite_hole ()
@@ -59,6 +70,11 @@ def secret_room ()
 end
 
 def treasure_room ()
+end
+
+def dead (why)
+  puts why, "GAME OVER !!!"
+  exit 0
 end
 
 dark_room()
