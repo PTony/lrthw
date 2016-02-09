@@ -41,31 +41,34 @@ def empty_room
   end
 end
 
-def cthulhu_room
-  cthulhu_dead = false
-  palms_equipped = false
 
-  puts "\nYou enter a room with a giant hole full of water in it."
+@cthulhu_dead = false
+@palms_equipped = false
+def cthulhu_room
+
+  puts "\nYou are in a room with a giant hole full of water in it."
   puts "Around this hole, 3 doors. One in North, one in South and one on West side"
-  if !cthulhu_dead
+  if !@cthulhu_dead
     puts "On the ground there is a tuba and palms kit and a harpon."
-    puts "Wait! There is bubbles in the water, there is a tunnel and wait! Something is coming from it... \nOMG! This is Cthulhu, he is now surfacing and staring at you and yelling like the demons of hell"
-  else
+    puts "Wait! There is bubbles in the water, there is a tunnel and wait! Something is coming from it..."
+    puts "OMG! This is Cthulhu, he is now surfacing and staring at you and yelling like the demons of hell"
+  elsif !@palms_equipped
     puts "On the ground there is a tuba and palms kit."
-    puts "Also we know there is a tunnel inside the hole of water"
+  else
+    puts "Cthulhu is dead in the water, and we know there is a tunnel inside the hole"
   end
   puts "What are you doing ?"
 
   puts "> "
   choice = $stdin.gets.chomp
 
-  if !cthulhu_dead && choice.include?("throw harpon at cthulhu")
+  if !@cthulhu_dead && choice.include?("throw harpon at cthulhu")
     puts "OMG, you hit him between his eyes. He go down, you killed him"
-    cthulhu_dead = true
+    @cthulhu_dead = true
     cthulhu_room
-  elsif !cthulhu_dead
-      dead("Wow at the second you started moving, Tchulhu make you a piece of shit and send you in hell. Look like you make a bad choice")
-  elsif cthulhu_dead && (choice.include?("go") || choice.include("open")) && choice.include?("door")
+  elsif !@cthulhu_dead
+      dead("Wow at the second you started moving, Tchulhu make you a piece of shit and kill you. Look like you make a bad choice")
+  elsif @cthulhu_dead && (choice.include?("go") || choice.include?("open")) && choice.include?("door")
     if choice.include?("north")
       treasure_room
     elsif choice.include?("south")
@@ -76,19 +79,20 @@ def cthulhu_room
       puts "This is not possible, retry"
       cthulhu_room
     end
-  elsif cthulhu_dead && !palm_equipped && choice.include?("grab tuba and palms kit")
-    palms_equipped = true
-  elsif chthulhu_dead && choice.include?("jump in water")
+  elsif @cthulhu_dead && !@palms_equipped && choice.include?("grab tuba and palms kit")
+    @palms_equipped = true
+    cthulhu_room
+  elsif @cthulhu_dead && choice.include?("jump in water")
     puts "You jump in the water and now swim in the tunnel"
     puts "You can see a ladder with a trap door and light coming from it"
-    if !palms_equipped
+    if !@palms_equipped
       dead("But you dont swim fast enough, you suffocating and drowning")
     else
       puts "You finally reach the ladder and open the trap doors"
       secret_room
     end
   else
-    puts "This is not posssible, retry"
+    puts "This is not posssible, retry2"
     cthulhu_room
   end
 end
