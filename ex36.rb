@@ -19,7 +19,19 @@ def bear_room
   puts "Inside this room there is a honey pot a bear and 3 doors"
   puts "One on North side, one on the East, and the other South side."
   puts "There is also a honey pot and a bear"
+  puts "What are you doing?"
+
+  print "> "
+  choice = $stdin.gets.chomp
+  if choice.include?("north")
+  elsif choice.include?("east")
+  elsif choice.include?("south")
+  else
+    puts "This is not possible, retry!\n\n"
+    bear_room
+  end
 end
+
 
 def empty_room
   puts "You enter an Empty room, there is nothing except 3 doors."
@@ -36,7 +48,7 @@ def empty_room
   elsif choice.include?("west")
     dark_room
   else
-    puts "This is not possible retry!"
+    puts "This is not possible, retry!"
     empty_room
   end
 end
@@ -44,6 +56,7 @@ end
 
 @cthulhu_dead = false
 @palms_equipped = false
+
 def cthulhu_room
 
   puts "\nYou are in a room with a giant hole full of water in it."
@@ -107,21 +120,39 @@ def cthulhu_room
   end
 end
 
+
 def infinite_hole
   dead("Take care were you walk, there is an infinite hole here and you fall in it")
 end
 
+
 def skeleton_room
-  puts "You enter a room with one living skeleton in it."
+  puts "You enter a room with one skeleton in it a library on west side and 2 doors."
+  puts "One South side, one East Side."
+  puts "What are you doing?"
+
+  print "> "
+  choice = $stdin.gets.chomp
+  if choice.include?("south")
+    bear_room
+  elsif choice.include?("east")
+    treasure_room
+  elsif choice.include?("library")
+    secret_room
+  else
+    puts "This is not possible, retry!\n\n"
+    skeleton_room
+  end
 end
 
 def secret_room
   puts "You enter a strange room"
-  puts "There is no doors"
+  puts "There is no doors just a library and a trap"
 end
 
 def treasure_room
   puts "You enter the treasure room"
+  puts "You Win !!!"
 end
 
 def dead (why)
