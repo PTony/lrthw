@@ -19,7 +19,7 @@ def bear_room
   puts "Inside this room there is a honey pot a bear and 3 doors"
   puts "One on North side, one on the East, and the other South side."
   puts "There is also a honey pot and a bear"
-  puts "What are you doing?"
+  puts "What are you doing ?"
 
   print "> "
   choice = $stdin.gets.chomp
