@@ -165,7 +165,20 @@ end
 
 def treasure_room
   puts "You enter the treasure room"
-  puts "You Win !!!"
+  puts "There is a treasure and 2 doors"
+  puts "One on south side and one west side"
+  puts "What are you doing ?"
+
+  print "> "
+  choice = $stdin.gets.chomp
+
+  if choice.include?("south")
+    cthulhu_room
+  elsif choice.include?("west")
+    skeleton_room
+  else
+    puts "This is not posssible, retry !!"
+  end
 end
 
 def dead (why)
