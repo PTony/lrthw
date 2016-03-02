@@ -3,15 +3,17 @@ def dark_room
   puts "One in North side and one on the East side."
   puts "Which one do you choose?"
 
-  puts "> "
-  choice = $stdin.gets.chomp
-  if choice.include?("north")
-    bear_room
-  elsif choice.include?("east")
-    empty_room
-  else
-    puts "You can't do that, retry!\n\n"
-    dark_room
+  while true
+    puts "> "
+    choice = $stdin.gets.chomp
+    if choice.include?("north")
+      bear_room
+    elsif choice.include?("east")
+      empty_room
+    else
+      puts "You can't do that, retry!\n\n"
+      dark_room
+    end
   end
 end
 
@@ -21,17 +23,19 @@ def bear_room
   puts "There is also a honey pot and a bear"
   puts "What are you doing ?"
 
-  print "> "
-  choice = $stdin.gets.chomp
-  if choice.include?("north")
-    skeleton_room
-  elsif choice.include?("east")
-    cthulhu_room
-  elsif choice.include?("south")
-    dark_room
-  else
-    puts "This is not possible, retry!\n\n"
-    bear_room
+  while true
+    print "> "
+    choice = $stdin.gets.chomp
+    if choice.include?("north")
+      skeleton_room
+    elsif choice.include?("east")
+      cthulhu_room
+    elsif choice.include?("south")
+      dark_room
+    else
+      puts "Unknow action, retry!\n\n"
+      bear_room
+    end
   end
 end
 
