@@ -24,8 +24,11 @@ def bear_room
   print "> "
   choice = $stdin.gets.chomp
   if choice.include?("north")
+    skeleton_room
   elsif choice.include?("east")
+    cthulhu_room
   elsif choice.include?("south")
+    dark_room
   else
     puts "This is not possible, retry!\n\n"
     bear_room
