@@ -151,6 +151,16 @@ end
 def secret_room
   puts "You enter a strange room"
   puts "There is no doors just a library and a trap"
+  puts "What are you doing ?"
+
+  print "> "
+  choice = $stdin.gets.chomp
+
+  if choice.include?("trap")
+    puts "It seem the trap is locked. You cant open it"
+  elsif choice.include?("library")
+    skeleton_room
+  end
 end
 
 def treasure_room
