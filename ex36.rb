@@ -160,6 +160,8 @@ def secret_room
     puts "It seem the trap is locked. You cant open it"
   elsif choice.include?("library")
     skeleton_room
+  else
+    puts "This is not possible. Retry !!"
   end
 end
 
