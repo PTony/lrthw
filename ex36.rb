@@ -152,6 +152,9 @@ end
 def secret_room
   puts "You enter a strange room"
   puts "There is no doors just a library and a trap"
+  if @library_open == true
+    puts "the library is a secret door and is open"
+  end
   puts "What are you doing ?"
 
   while true
@@ -164,8 +167,10 @@ def secret_room
       @library_inspected = true
       puts "All the book in the library except one are full of dust"
     elsif @library_inspected && choice == "inspect book"
+      @library_open = true
       puts "Wow, this book is linked to a mechanism, it activated something, the library is now moving!!!"
-      puts "Nice, it's a secret door and you find how to open it, let's seee what is behind\n\n"
+      puts "Nice, it's a secret door and you find how to open it, let's seee what is behind, type \"go secret door\"\n\n"
+    elsif choice == "go secret door"
       skeleton_room
     else
       puts "This is not possible. Retry !!"
@@ -190,5 +195,6 @@ end
 
 #dark_room
 #cthulhu_room
-#secret_room
-treasure_room
+secret_room
+#treasure_room
+#skeleton_room
