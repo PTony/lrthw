@@ -175,22 +175,12 @@ end
 
 def treasure_room
   puts "You enter the treasure room"
-  puts "There is a treasure and 2 doors"
-  puts "One on south side and one west side"
-  puts "What are you doing ?"
-
-  while true
-    print "> "
-    choice = $stdin.gets.chomp
-
-    if choice.include?("south")
-      cthulhu_room
-    elsif choice.include?("west")
-      skeleton_room
-    else
-      puts "This is not possible, retry !!"
-    end
-  end
+  puts "And there it's great because there is a treasure in it"
+  puts "There is 2 doors."
+  puts "One on South side and one West side? But who cares?"
+  puts "Seeing this awesome treasure you are so happy and have an unstopable illarious laughing"
+  puts "You fall down, laughing and suffocating, you lost control, shit your pants and vomit on yourself"
+  dead("Finally you drown in your vomit and you smell crap. Poor little thing, you're arent strong enough for this sort of adventure!"
 end
 
 def dead (why)
