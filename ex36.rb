@@ -175,9 +175,9 @@ end
 
 def treasure_room
   puts "You enter the treasure room"
-  puts "And there it's great because there is a treasure in it"
-  puts "There is 2 doors."
-  puts "One on South side and one West side? But who cares?"
+  puts "And it's great because there is a treasure in it"
+  puts "There is also 2 doors."
+  puts "One on South side and one West side? But who cares?\n"
   puts "Seeing this awesome treasure you are so happy and have an unstopable illarious laughing"
   puts "You fall down, laughing and suffocating, you lost control, shit your pants and vomit on yourself"
   dead("Finally you drown in your vomit and you smell crap. Poor little thing, you're arent strong enough for this sort of adventure!")
