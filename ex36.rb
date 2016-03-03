@@ -180,7 +180,7 @@ def treasure_room
   puts "One on South side and one West side? But who cares?"
   puts "Seeing this awesome treasure you are so happy and have an unstopable illarious laughing"
   puts "You fall down, laughing and suffocating, you lost control, shit your pants and vomit on yourself"
-  dead("Finally you drown in your vomit and you smell crap. Poor little thing, you're arent strong enough for this sort of adventure!"
+  dead("Finally you drown in your vomit and you smell crap. Poor little thing, you're arent strong enough for this sort of adventure!")
 end
 
 def dead (why)
@@ -190,4 +190,5 @@ end
 
 #dark_room
 #cthulhu_room
-secret_room
+#secret_room
+treasure_room
