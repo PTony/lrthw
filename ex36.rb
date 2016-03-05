@@ -132,12 +132,18 @@ end
 def skeleton_room
   puts "You enter a room with one skeleton in it, 2 doors and a library."
   puts "One door is South side, the other is East Side."
-  if @library_open == false
+  if !@library_open
   puts "The library is West side"
   else
     puts "The library is West side and is an open secret door"
   end
+  if !@skeleton_killed
+    puts "The skeleton is alive and he stand up now"
+  else
+    puts "There is a broken skeleton evrywhere in the room"
+  end
     puts "What are you doing?"
+
 
 
   while true
