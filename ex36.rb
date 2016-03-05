@@ -1,6 +1,7 @@
 @cthulhu_dead = false
 @palms_equipped = false
 @library_inspected = false
+@library_open = false
 
 def dark_room
   puts "You are in a dark room, There is nothing here except 2 doors."
@@ -129,9 +130,15 @@ end
 
 
 def skeleton_room
-  puts "You enter a room with one skeleton in it a library on west side and 2 doors."
-  puts "One South side, one East Side."
-  puts "What are you doing?"
+  puts "You enter a room with one skeleton in it, 2 doors and a library."
+  puts "One door is South side, the other is East Side."
+  if @library_open == false
+  puts "The library is West side"
+  else
+    puts "The library is West side and is an open secret door"
+  end
+    puts "What are you doing?"
+
 
   while true
     print "> "
@@ -140,11 +147,10 @@ def skeleton_room
       bear_room
     elsif choice.include?("east")
       treasure_room
-    elsif choice.include?("library")
+    elsif @library_open == true && choice.include?("library")
       secret_room
     else
       puts "This is not possible, retry!\n\n"
-      skeleton_room
     end
   end
 end
