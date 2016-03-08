@@ -2,7 +2,8 @@
 @palms_equipped = false
 @library_inspected = false
 @library_open = false
-@skeleton_killed = false
+@skeleton_dead = false
+@bear_eating = false
 
 
 def dark_room
@@ -112,18 +113,23 @@ end
 def bear_room
   puts "Inside this room there is a honey pot a bear and 3 doors"
   puts "One on North side, one on the East, and the other South side."
-  puts "There is also a honey pot and a bear"
+  puts "There is also a honey pot and a bear starring at you"
   puts "What are you doing ?"
 
   while true
     print "> "
     choice = $stdin.gets.chomp
-    if choice.include?("north")
+    if !@bear_eating && choice == "kick honeypot"
+      @bear_eating = true
+      puts "The honeypot roll near the bear. He is now busy to eat the honey"
+    elsif @bear_eating && choice.include?("north")
       skeleton_room
-    elsif choice.include?("east")
+    elsif @bear_eating && choice.include?("east")
       cthulhu_room
-    elsif choice.include?("south")
+    elsif @bear_eating && choice.include?("south")
       dark_room
+    elsif !@bear_eating
+      dead("The bear run to you and slap your face, probably to protect the honey")
     else
       puts "Unknow action, retry!\n\n"
     end
@@ -139,7 +145,7 @@ def skeleton_room
   else
     puts "The library is West side and is an open secret door"
   end
-  if !@skeleton_killed
+  if !@skeleton_dead
     puts "The skeleton is alive and he stand up now"
   else
     puts "There is a broken bones everywhere in the room"
@@ -150,13 +156,13 @@ def skeleton_room
     print "> "
     choice = $stdin.gets.chomp
 
-    if !@skeleton_killed && choice == "fus ro dah"
-      @skeleton_killed = true
+    if !@skeleton_dead && choice == "fus ro dah"
+      @skeleton_dead = true
       puts "Wow !!, Are you the Dragon Born?"
       puts "This cri send the skeleton against the wall and all his bones are breaking and scarretered into the room"
-    elsif !@skeleton_killed
+    elsif !@skeleton_dead
       dead("The skeleton come to you and eat you")
-    elsif @skeleton_killed && choice.include?("south")
+    elsif @skeleton_dead && choice.include?("south")
       bear_room
     elsif choice.include?("east")
       treasure_room
