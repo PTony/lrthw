@@ -218,8 +218,4 @@ def dead (why)
   exit 0
 end
 
-#dark_room
-#cthulhu_room
-secret_room
-#treasure_room
-#skeleton_room
+dark_room
