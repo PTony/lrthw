@@ -2,6 +2,8 @@
 @palms_equipped = false
 @library_inspected = false
 @library_open = false
+@skeleton_killed = false
+
 
 def dark_room
   puts "You are in a dark room, There is nothing here except 2 doors."
@@ -140,20 +142,25 @@ def skeleton_room
   if !@skeleton_killed
     puts "The skeleton is alive and he stand up now"
   else
-    puts "There is a broken skeleton evrywhere in the room"
+    puts "There is a broken bones everywhere in the room"
   end
     puts "What are you doing?"
-
-
 
   while true
     print "> "
     choice = $stdin.gets.chomp
-    if choice.include?("south")
+
+    if !@skeleton_killed && choice == "fus ro dah"
+      @skeleton_killed = true
+      puts "Wow !!, Are you the Dragon Born?"
+      puts "This cri send the skeleton against the wall and all his bones are breaking and scarretered into the room"
+    elsif !@skeleton_killed
+      dead("The skeleton come to you and eat you")
+    elsif @skeleton_killed && choice.include?("south")
       bear_room
     elsif choice.include?("east")
       treasure_room
-    elsif @library_open == true && choice.include?("library")
+    elsif @library_open && choice.include?("library")
       secret_room
     else
       puts "This is not possible, retry!\n\n"
