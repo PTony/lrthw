@@ -37,5 +37,10 @@ end
 class X
 end
 
-def x()
+def my_function(arg)
+  puts "#{arg}"
 end
+my_function("Here we use a function declared with \"def\" keyword")
+
+puts "At line below we test if \my_function\" is defined"
+puts defined?(my_function) == "method"
