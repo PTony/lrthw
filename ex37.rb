@@ -48,3 +48,11 @@ puts defined?(my_function) == "method"
 (0..3).each do |x|
   puts "here we are in a \"do\" loop, and its pass #{x}"
 end
+
+if X
+  puts "it's X"
+elsif Y
+  puts "it's Y"
+else
+  puts "it's something else"
+end
