@@ -44,3 +44,7 @@ my_function("Here we use a function declared with \"def\" keyword")
 
 puts "At line below we test if \my_function\" is defined"
 puts defined?(my_function) == "method"
+
+(0..3).each do |x|
+  puts "here we are in a \"do\" loop, and its pass #{x}"
+end
