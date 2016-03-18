@@ -70,5 +70,6 @@ ensure
 end
 puts impossible_var
 
-
-#ensure
+for x in 0..3
+  puts "Here a \"for\" loop, its pass #{x}"
+end
