@@ -56,3 +56,19 @@ elsif Y
 else
   puts "it's something else"
 end
+
+begin
+  impossible_var = 1 / 0
+rescue ZeroDivisionError => e
+  puts "Error: Divided by Zero"
+  puts "class   = #{e.class}"
+  puts "message = #{e.message}"
+  puts "trace   = #{e.backtrace.inspect}"
+  puts "an error occured!"
+ensure
+  impossible_var = 1
+end
+puts impossible_var
+
+
+#ensure
