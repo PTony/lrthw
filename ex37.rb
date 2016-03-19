@@ -73,3 +73,12 @@ puts impossible_var
 for x in 0..3
   puts "Here a \"for\" loop, its pass #{x}"
 end
+
+module Ex25
+  def Ex25.break_words(stuff)
+    words = stuff.split(' ')
+    return words
+  end
+end
+sentence = "Here we use a fonction defined in a module for splitting each words of a sentence"
+puts Ex25.break_words(sentence)
