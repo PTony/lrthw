@@ -82,3 +82,5 @@ module Ex25
 end
 sentence = "Here we use a fonction defined in a module for splitting each words of a sentence"
 puts Ex25.break_words(sentence)
+
+{0..5}.each {|y| next}
